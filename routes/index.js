@@ -1,5 +1,5 @@
 import express from 'express';
-const indexRouter = express.Router();
+const router = express.Router();
 
 const messages = [
   {
@@ -15,9 +15,12 @@ const messages = [
 ];
 
 
-indexRouter.get(/^\/$|\/index(\.html)?$/, (req, res) => {
+router.get(/^\/$|\/index(\.html)?$/, (req, res) => {
   res.render('index', { title: "Mini Messageboard", messages: messages });
 });
 
+router.get('/new', (req, res) => {
+  res.render('form',  { title: "Add a new message"});
+});
 
-export default indexRouter;
+export default router;

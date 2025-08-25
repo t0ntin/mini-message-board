@@ -2,7 +2,8 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import indexRouter from './routes/index.js';
+import router from './routes/index.js';
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -16,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, '/public')));
 
 // routes
-app.use('/', indexRouter);
+app.use('/', router);
 
 app.use((req, res) => {
   res.status(404).render('404');
