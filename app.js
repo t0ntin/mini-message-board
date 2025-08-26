@@ -28,6 +28,13 @@ app.use((err, req, res, next) => {
   res.status(err.statusCode || 500).send(err.message);
 });
 
+// ========TEST==========
+app.get('/check-css', (req, res) => {
+  const cssPath = path.join(__dirname, 'public/css/style.css');
+  res.send({ exists: fs.existsSync(cssPath), path: cssPath });
+});
+
+// ===================
 app.listen(PORT,  (error) => {
   if(error){
     throw error;
