@@ -16,7 +16,7 @@
     <%messages.forEach((message) => {%>
     <p class="msg-text">Message: <%= message.text %></p>
     <p class="msg-user">User: <%= message.user %></p>
-    <p class="added-date">Date: <%= message.date %></p>
+    <p class="added-date">Date: <%= message.added.toLocaleString() %></p>
     <%})%>
   </div>
 </body>
