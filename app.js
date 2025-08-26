@@ -29,10 +29,10 @@ app.use((err, req, res, next) => {
 });
 
 // ========TEST==========
-app.get('/check-css', (req, res) => {
-  const cssPath = path.join(__dirname, 'public/css/style.css');
-  res.send({ exists: fs.existsSync(cssPath), path: cssPath });
-});
+// app.get('/check-css', (req, res) => {
+//   const cssPath = path.join(__dirname, 'public/css/style.css');
+//   res.send({ exists: fs.existsSync(cssPath), path: cssPath });
+// });
 
 // ===================
 app.listen(PORT,  (error) => {
