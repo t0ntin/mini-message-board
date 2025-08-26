@@ -31,7 +31,6 @@ body {
   justify-content: center;
   text-align: center;
   background-color: black;
-  color: white;
 }
 
 /* USEFUL FOR DE-BUGGING AFTER A HORIZONTAL SCROLL BAR APPEARS FOR NO APPARENT REASON */
@@ -61,42 +60,44 @@ a {
   text-decoration: none;
 }
 
+.main {
+  height: 100vh;
+}
 
-/* Center the form on the page */
-form {
+form, .msg-container {
   width: 100%;
   max-width: 500px;
-  margin: 40px auto;
-  padding: 20px 30px;
-  background: #fff;
+  margin: 15px 0;
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(115, 114, 114, 0.1);
+  background: #fdfdfd;   
+  border: 1px solid #e2e2e2;       
 }
 
-/* Headline */
 h1 {
-  margin-bottom: 20px;
+  margin: 15px 0;
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
 }
 
-/* Labels */
 form label {
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
-/* Inputs & textarea */
 form input[type="text"],
 form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #4CAF50;
   border-radius: 6px;
   font-size: 14px;
 }
 
-/* Textarea sizing */
 form textarea {
   min-height: 100px;
   resize: vertical;
@@ -119,4 +120,60 @@ form button {
 
 form button:hover {
   background: #45a049;
+}
+
+
+.msg-container {
+background-color: hsla(0, 0%, 0%, 0.7);
+box-shadow: 1px 3px 5px rgb(176, 176, 176);
+}
+
+.msg-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #eeeeee;
+  margin-bottom: 10px;
+}
+
+.msg-user {
+  font-size: 1.2rem;
+  color: #9b9b9b;
+  margin-bottom: 6px;
+}
+
+.added-date {
+  font-size: 1.2rem;
+  color: #9b9b9b;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+
+button {
+  background: hsla(122, 38%, 41%, 0.751);             /* green base color */
+  color: white;                    /* text color */
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+button:hover {
+  background: #45a049; 
+  transform: translateY(-2px);   
+  box-shadow: 0 6px 16px rgba(0, 255, 100, 0.4); 
+}
+
+/* Active/click effect */
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.open {
+  padding: 8px 12px;
 }

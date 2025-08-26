@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <script src="./js/script.js"defer></script>
-  <title>Document</title>
-</head>
-<body>
-  <h1><%= title %></h1>
-  <div class="msg-container">
-    
-    <%messages.forEach((message) => {%>
-    <p class="msg-text">Message: <%= message.text %></p>
-    <p class="msg-user">User: <%= message.user %></p>
-    <p class="added-date">Date: <%= message.added.toLocaleString() %></p>
-    <%})%>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/js/main.js" defer></script>
+    <title>Mini Message Board</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1><%= title %></h1>
+      <a href="/new">
+        <button class="new-msg-button">New Message</button>
+      </a>
+      <%messages.forEach((message, index) => {%>
+      <div class="msg-container">
+        <p class="msg-text">Message: <%= message.text %></p>
+        <p class="msg-user">User: <%= message.user %></p>
+        <p class="added-date">Date: <%= message.added.toLocaleString() %></p>
+        <a href="/messages/<%= index%>">
+          <button class="open">Open</button>
+        </a>
+      </div>
+      <%})%>
+    </main>
+  </body>
 </html>

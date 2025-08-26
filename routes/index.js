@@ -23,10 +23,17 @@ router.get('/new', (req, res) => {
   res.render('form',  { title: "Add a new message"});
 });
 
+router.get('/messages/:id', (req, res) => {
+  const { id } = req.params;
+  const index = Number(id); 
+  const msg = messages[index]; 
+  res.render('messages', { message: msg });
+});
+
 router.post('/new', (req, res) => {
   const { user, text } = req.body;
 
-  messages.push({
+  messages.unshift({
     text: text,
     user: user,
     added: new Date()
