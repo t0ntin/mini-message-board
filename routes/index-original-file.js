@@ -14,7 +14,6 @@ const messages = [
   }
 ];
 
-
 router.get(/^\/$|\/index(\.html)?$/, (req, res) => {
   res.render('index', { title: "Mini Message Board", messages: messages });
 });

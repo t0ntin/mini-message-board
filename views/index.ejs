@@ -20,16 +20,19 @@
       <a href="/new">
         <button class="new-msg-button">New Message</button>
       </a>
-      <%messages.forEach((message, index) => {%>
-      <div class="msg-container">
-        <p class="msg-text">Message: <%= message.text %></p>
-        <p class="msg-user">User: <%= message.user %></p>
-        <p class="added-date">Date: <%= message.added.toLocaleString() %></p>
-        <a href="/messages/<%= index%>">
-          <button class="open">Open</button>
-        </a>
-      </div>
-      <%})%>
+      <% messages.forEach(message => { %>
+        <div class="msg-container">
+          <p class="msg-text">Message: <%= message.message %></p>
+          <p class="msg-user">User: <%= message.username %></p>
+          <% if (message.added) { %>
+            <p class="added-date">Date: <%= message.added.toLocaleString() %></p>
+          <% } %>
+          <a href="/selected-msg/<%= message.id %>"><button class="open">View</button></a>
+        </div>
+      <% }); %>
+      
+      
+      
     </main>
   </body>
 </html>

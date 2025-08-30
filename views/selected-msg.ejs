@@ -7,11 +7,14 @@
   <title>Message Details</title>
 </head>
 <body>
+  <h1><%= title %></h1>
+
   <div class="msg-container">
-    <p class="msg-text">Message: <%= message.text %></p>
-    <p class="msg-user">User: <%= message.user %></p>
-    <p class="added-date">Date: <%= message.added.toLocaleString() %></p>
-    <a href="/"><button class="open">Back to main page</button></a>
+    <p class="msg-text">Message: <%= selectedMsg.message %></p>
+    <p class="msg-user">User: <%= selectedMsg.username %></p>
+    <% if (selectedMsg.added) { %>
+      <p class="added-date">Date: <%= selectedMsg.added.toLocaleString() %></p>
+    <% } %>
   </div>
 </body>
 </html>
