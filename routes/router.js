@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { getMessagesIndexView, getSelectedMessages } from '../controllers/controller.js';
+import { getMessagesIndexView, getSelectedMessages, getNewView, postNewView } from '../controllers/controller.js';
 
 router.get('/', getMessagesIndexView);
 
@@ -8,8 +8,8 @@ router.get('/', getMessagesIndexView);
 
 router.get('/selected-msg/:id', getSelectedMessages)
 
-
-
+router.get('/new', getNewView);
+router.post('/new', postNewView);
 
 // THIS FUNCTION WORKED WITH THE ARRAY, BEFORE IMPLEMENTING THE DATABASE:
 // router.get('/messages/:id', (req, res) => {
