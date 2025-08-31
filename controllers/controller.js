@@ -10,9 +10,7 @@ import getMessageObject from '../db/queries.js';
 // }
 
 async function getMessagesIndexView(req, res) {
-  // const messages = await getMessageObject();
   const messages = await [...(await getMessageObject()).reverse()];
-  // const reversedMessages = [...messages].reverse();
   res.render('index', { title: 'Mini Message Board', messages});
 }
 
