@@ -1,5 +1,5 @@
 // const { Pool } = require("pg");
-import { Pool } from 'pg';
+// import { Pool } from 'pg';
 
 
 // All of the following properties should be read from environment variables
